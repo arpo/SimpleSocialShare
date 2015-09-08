@@ -1,0 +1,103 @@
+.MOS-shareBtn:link, .MOS-shareBtn:visited {
+	font-size: 30px;
+	color: #fff;
+	background-color: #444;
+	border-radius: 0.1em;
+	width: 1.2em;
+	padding: 0.2em;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	margin-right: 0.2em;
+	margin-bottom: 0.2em;
+	-moz-transition: all 0.2s ease-out;
+	-ms-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	-webkit-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+.MOS-shareBtn:hover, .MOS-shareBtns:active {
+	color: #fff;
+	text-decoration: none;
+	-moz-box-shadow: inset 0px 0px 1em rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow: inset 0px 0px 1em rgba(0, 0, 0, 0.35);
+	-ms-box-shadow: inset 0px 0px 1em rgba(0, 0, 0, 0.35);
+	-0-box-shadow: inset 0px 0px 1em rgba(0, 0, 0, 0.35);
+	box-shadow: inset 0px 0px 1em rgba(0, 0, 0, 0.35);
+}
+
+/* Make buttons round */
+.round .MOS-shareBtn:link, .round .MOS-shareBtn:visited {
+	border-radius: 100%;
+}
+
+/* Make icons small */
+.small .MOS-shareBtn:link, .small .MOS-shareBtn:visited {
+	font-size: 20px;
+	padding: 0.635em;
+	margin-right: 0.22em;
+	margin-bottom: 0.22em;
+}
+
+
+
+.MOS-shareBtn:link i, .MOS-shareBtn:visited i {
+	-moz-transition: all 0.2s ease-out;
+	-ms-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	-webkit-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+
+.MOS-shareBtn:hover i, .MOS-shareBtns:active i {
+	-moz-transform: scale(1.15);
+	-ms-transform: scale(1.15);
+	-o-transform: scale(1.15);
+	-webkit-transform: scale(1.15);
+	transform: scale(1.15);
+}
+
+
+.dark .MOS-shareBtn.link:hover,
+.MOS-shareBtn.link:link {
+	background-color: #3E9A2C;
+}
+
+.dark .MOS-shareBtn.facebook:hover,
+.MOS-shareBtn.facebook:link {
+	background-color: #3b579d;
+}
+
+.dark .MOS-shareBtn.twitter:hover,
+.MOS-shareBtn.twitter:link {
+	background-color: #00aced;
+}
+
+.dark .MOS-shareBtn.gplus:hover,
+.MOS-shareBtn.gplus:link {
+	background-color: #da4835;
+}
+
+.dark .MOS-shareBtn.tumblr:hover,
+.MOS-shareBtn.tumblr:link {
+	background-color: #27415a;
+}
+
+.dark .MOS-shareBtn.pinterest:hover,
+.MOS-shareBtn.pinterest:link {
+	background-color: #c72022;
+}
+
+.dark .MOS-shareBtn.linkedin:hover,
+.MOS-shareBtn.linkedin:link {
+	background-color: #007bb6;
+}
+
+.dark .MOS-shareBtn.weibo:hover,
+.MOS-shareBtn.weibo:link {
+	background-color: #b33333;
+}
+
+.dark .MOS-shareBtn:link {
+	background-color: #333;
+}
