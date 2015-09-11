@@ -93,6 +93,11 @@
 	background-color: #007bb6;
 }
 
+.dark .MOS-shareBtn.reddit:hover,
+.MOS-shareBtn.reddit:link {
+	background-color: #FF4500;
+}
+
 .dark .MOS-shareBtn.weibo:hover,
 .MOS-shareBtn.weibo:link {
 	background-color: #b33333;

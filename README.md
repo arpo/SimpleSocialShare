@@ -1,7 +1,7 @@
 # Simple social share buttons
-Easy to setup social buttons. Supported networks:
+Easy to setup social buttons. 
 
-Facebook, Twitter, Google+, Tumblr, Pinterest, LinkedIn, Weibo.
+Supported networks: Facebook, Twitter, Google+, Tumblr, Pinterest, LinkedIn, Reddit, Sina Weibo.
 
 See index.html for more info
 
@@ -43,7 +43,7 @@ See index.html for more info
 			},
 			insert: { //...or insert/inject links like this
 				target: '.socialButtons',
-				buttons: ['link, facebook, twitter, gplus', 'tumblr', 'pinterest', 'linkedin', 'weibo']
+				buttons: ['link', 'facebook', 'twitter', 'gplus', 'tumblr', 'pinterest', 'linkedin', 'reddit', 'weibo']
 			}
 		});
 		

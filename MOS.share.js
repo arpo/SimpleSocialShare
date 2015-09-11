@@ -59,6 +59,9 @@ MOS.social = (function() {
 				if (curr === 'linkedin') {
 					$cont.append($('<a title="LinkedIn" class="MOS-shareBtn linkedin" data-type="linkedin" href="javascript:"><i class="fa fa-linkedin"></i></a>'));
 				}
+				if (curr === 'reddit') {
+					$cont.append($('<a title="Reddit" class="MOS-shareBtn reddit" data-type="reddit" href="javascript:"><i class="fa fa-reddit"></i></a>'));
+				}
 				if (curr === 'weibo') {
 					$cont.append($('<a title="Sina Weibo 新浪微博" class="MOS-shareBtn weibo" data-type="weibo" href="javascript:"><i class="fa fa-weibo"></i></a>'));
 				}
@@ -103,6 +106,10 @@ MOS.social = (function() {
 
 			if (type === 'linkedin') {
 				_linkedin(_shareData);
+			}
+
+			if (type === 'reddit') {
+				_reddit(_shareData.link);
 			}
 
 		});
@@ -261,6 +268,14 @@ MOS.social = (function() {
 		
 		_sendStat('Share', 'Linkedin', shareInfo.link);
 		_newWin(500, 400, url);
+
+	}
+
+	function _reddit (link) {
+
+		link = link || document.location.href;
+		_sendStat('Share', 'Reddit', link);
+		_newWin(550, 550, 'https://www.reddit.com/submit?url=' + encodeURIComponent(link) + '&amp;source=clicktotweet');
 
 	}
 
