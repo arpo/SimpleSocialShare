@@ -1,4 +1,5 @@
-.MOS-shareBtn:link, .MOS-shareBtn:visited {
+.MOS-shareBtn:link, 
+.MOS-shareBtn:visited {
 	font-size: 30px;
 	color: #fff;
 	background-color: #444;
@@ -16,7 +17,8 @@
 	-webkit-transition: all 0.2s ease-out;
 	transition: all 0.2s ease-out;
 }
-.MOS-shareBtn:hover, .MOS-shareBtns:active {
+.MOS-shareBtn:hover, 
+.MOS-shareBtns:active {
 	color: #fff;
 	text-decoration: none;
 	-moz-box-shadow: inset 0px 0px 1em rgba(0, 0, 0, 0.35);
@@ -27,21 +29,107 @@
 }
 
 /* Make buttons round */
-.round .MOS-shareBtn:link, .round .MOS-shareBtn:visited {
+.round .MOS-shareBtn:link, 
+.round .MOS-shareBtn:visited {
 	border-radius: 100%;
 }
 
 /* Make icons small */
-.small .MOS-shareBtn:link, .small .MOS-shareBtn:visited {
+.small .MOS-shareBtn:link, 
+.small .MOS-shareBtn:visited {
 	font-size: 20px;
 	padding: 0.635em;
 	margin-right: 0.22em;
 	margin-bottom: 0.22em;
 }
+/* Make icons big */
+/*.big .MOS-shareBtn:link, 
+.big .MOS-shareBtn:visited {
+	font-size: 30px;
+	padding: 0.635em;
+	margin-right: 0.22em;
+	margin-bottom: 0.22em;
+}*/
+
+/* No background */
+.noBg.dark .MOS-shareBtn.link:hover,
+.noBg .MOS-shareBtn.link:link, 
+.noBg .MOS-shareBtn.link:visited {
+	color: #3E9A2C;
+	background-color: transparent;
+}
+.noBg.dark .MOS-shareBtn.facebook:hover,
+.noBg .MOS-shareBtn.facebook:link, 
+.noBg .MOS-shareBtn.facebook:visited {
+	color: #3b579d;
+	background-color: transparent;
+}
+.noBg.dark  .MOS-shareBtn.twitter:hover, 
+.noBg .MOS-shareBtn.twitter:link, 
+.noBg .MOS-shareBtn.twitter:visited {
+	color: #00aced;
+	background-color: transparent;
+}
+.noBg.dark .MOS-shareBtn.gplus:hover,
+.noBg .MOS-shareBtn.gplus:link, 
+.noBg .MOS-shareBtn.gplus:visited {
+	color: #da4835;
+	background-color: transparent;
+}
+.noBg.dark .MOS-shareBtn.tumblr:hover,
+.noBg .MOS-shareBtn.tumblr:link, 
+.noBg .MOS-shareBtn.tumblr:visited {
+	color: #27415a;
+	background-color: transparent;
+}
+.noBg.dark .MOS-shareBtn.pinterest:hover,
+.noBg .MOS-shareBtn.pinterest:link, 
+.noBg .MOS-shareBtn.pinterest:visited {
+	color: #c72022;
+	background-color: transparent;
+}
+.noBg.dark .MOS-shareBtn.linkedin:hover,
+.noBg .MOS-shareBtn.linkedin:link, 
+.noBg .MOS-shareBtn.linkedin:visited {
+	color: #007bb6;
+	background-color: transparent;
+}
+.noBg.dark .MOS-shareBtn.reddit:hover,
+.noBg .MOS-shareBtn.reddit:link, 
+.noBg .MOS-shareBtn.reddit:visited {
+	color: #FF4500;
+	background-color: transparent;
+}
+.noBg.dark .MOS-shareBtn.weibo:hover,
+.noBg .MOS-shareBtn.weibo:link, 
+.noBg .MOS-shareBtn.weibo:visited {
+	color: #b33333;
+	background-color: transparent;
+}
+
+.noBg .MOS-shareBtn:hover,
+.noBg .MOS-shareBtn:active {
+	-moz-box-shadow: inset 0px 0px 1em rgba(0, 0, 0, 0);
+	-webkit-box-shadow: inset 0px 0px 1em rgba(0, 0, 0, 0);
+	-ms-box-shadow: inset 0px 0px 1em rgba(0, 0, 0, 0);
+	-0-box-shadow: inset 0px 0px 1em rgba(0, 0, 0, 0);
+	box-shadow: inset 0px 0px 1em rgba(0, 0, 0, 0);
+}
+
+.noBg .MOS-shareBtn:link,
+.noBg .MOS-shareBtn:visited {
+	font-size: 35px;
+	padding: 0.075em;
+}
+.noBg.dark .MOS-shareBtn:link,
+.noBg.dark .MOS-shareBtn:visited {
+	color: #444;
+	background-color: transparent;
+}
 
 
-
-.MOS-shareBtn:link i, .MOS-shareBtn:visited i {
+.MOS-shareBtn:link i, 
+.MOS-shareBtn:visited i {
 	-moz-transition: all 0.2s ease-out;
 	-ms-transition: all 0.2s ease-out;
 	-o-transition: all 0.2s ease-out;
@@ -49,7 +137,8 @@
 	transition: all 0.2s ease-out;
 }
 
-.MOS-shareBtn:hover i, .MOS-shareBtns:active i {
+.MOS-shareBtn:hover i, 
+.MOS-shareBtns:active i {
 	-moz-transform: scale(1.15);
 	-ms-transform: scale(1.15);
 	-o-transform: scale(1.15);
