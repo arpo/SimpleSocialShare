@@ -5,8 +5,16 @@ Supported networks: Facebook, Twitter, Google+, Tumblr, Pinterest, LinkedIn, Red
 
 See index.html for more info
 
+	<h1>Simple to set up social share</h1>
+
 	<h3>Deafult</h3>
 	<div class="socialButtons"></div> 
+
+	<h3>No background</h3>
+	<div class="socialButtons noBg"></div> 
+
+	<h3>No background with dark start color</h3>
+	<div class="socialButtons noBg dark"></div> 
 
 	<h3>Rounded</h3>
 	<div class="socialButtons round"></div> 
