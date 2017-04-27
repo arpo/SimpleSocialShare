@@ -19,36 +19,40 @@
 	<!-- <a title="Copy link" class="MOS-shareBtn link" data-type="link" href="javascript:"><i class="fa fa-link"></i></a><a title="Facebook" class="MOS-shareBtn facebook" data-type="facebook" href="javascript:"><i class="fa fa-facebook"></i></a><a title="Twitter" class="MOS-shareBtn twitter" data-type="twitter" href="javascript:"><i class="fa fa-twitter"></i></a><a title="Google+" class="MOS-shareBtn gplus" data-type="gplus" href="javascript:"><i class="fa fa-google-plus"></i></a><a title="Tumblr" class="MOS-shareBtn tumblr" data-type="tumblr" href="javascript:"><i class="fa fa-tumblr"></i></a><a title="Pinterest" class="MOS-shareBtn pinterest" data-type="pinterest" href="javascript:"><i class="fa fa-pinterest"></i></a><a title="LinkedIn" class="MOS-shareBtn linkedin" data-type="linkedin" href="javascript:"><i class="fa fa-linkedin"></i></a><a title="Sina Weibo 新浪微博" class="MOS-shareBtn weibo" data-type="weibo" href="javascript:"><i class="fa fa-weibo"></i></a> -->
 
 
-	<!-- 
-		Optional classes 
-		dark: Start color is dark grey 
-		small: Makes icons smaler 
+	<!--
+		Optional classes
+		dark: Start color is dark grey
+		small: Makes icons smaler
 		round: makes buttons round
 	-->
 
 	<h1>Simple to set up social share</h1>
 
 	<h3>Deafult</h3>
-	<div class="socialButtons"></div> 
+	<div class="socialButtons"></div>
 
 	<h3>No background</h3>
-	<div class="socialButtons noBg"></div> 
+	<div class="socialButtons noBg"></div>
 
 	<h3>No background with dark start color</h3>
-	<div class="socialButtons noBg dark"></div> 
+	<div class="socialButtons noBg dark"></div>
 
 	<h3>Rounded</h3>
-	<div class="socialButtons round"></div> 
+	<div class="socialButtons round"></div>
 
 	<h3>Smaller icons</h3>
-	<div class="socialButtons small"></div> 
+	<div class="socialButtons small"></div>
 
 	<h3>Start color is dark grey </h3>
-	<div class="socialButtons dark"></div> 
+	<div class="socialButtons dark"></div>
 
 	<h3>And all together</h3>
-	<div class="socialButtons round dark small"></div> 
+	<div class="socialButtons round dark small"></div>
 
+	<div style="margin: 20px 0;">
+		<a href="javascript:shareAnyLink()">Any link</a>
+	</div>
+	
 	<style type="text/css">
 		/*Set custom size*/
 		/*.MOS-shareBtn:link {
@@ -60,7 +64,13 @@
 	<script type="text/javascript" src="MOS.share.js"></script>
 	<script type="text/javascript">
 
+	//Share from any link like this:
+	function shareAnyLink() {
+		MOS.social.share('facebook');
+	}
+
 	$(document).on('ready', function() {
+
 		MOS.social.setup({
 			fn: function (that, ev) { //This runs before the share functionality is executed
 				MOS.social.set({ //This data is used by all share buttons
@@ -68,14 +78,14 @@
 					link: 'http://futurism.com/videos/the-top-19-artificial-intelligence-movies/',
 					picture: 'https://i.ytimg.com/vi/C23Z3ANGk-U/hqdefault.jpg',
 					text: 'The Top 19 Artificial Intelligence Movies - Futurism. These are our top favorite 19 artificial intelligence movies.'
-				});		
+				});
 			},
-			insert: { //...or insert/inject links like this
+			insert: { //...or insert/inject links like this, can be omited
 				target: '.socialButtons',
 				buttons: ['link', 'facebook', 'twitter', 'gplus', 'tumblr', 'pinterest', 'linkedin', 'reddit', 'weibo']
 			}
 		});
-		
+
 	});
 
   </script>

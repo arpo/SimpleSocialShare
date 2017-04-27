@@ -32,7 +32,7 @@ MOS.social = (function() {
 		}
 
 		if (obj.insert && obj.insert.target && obj.insert.buttons) {
-			
+
 			var len = obj.insert.buttons.length, i, curr, $cont;
 			$cont = $(obj.insert.target)
 			for (i = 0; i < len; i += 1) {
@@ -68,51 +68,54 @@ MOS.social = (function() {
 			}
 
 		}
-		
+
 		$(document.body).on('click', '.MOS-shareBtn', function (e) {
 			e.preventDefault();
 
 			_runBeforFn(this, e);
-
-			var type = $(this).data('type').toLowerCase();
-
-			if (type === 'link') {
-				_link(_shareData);
-			}
-
-			if (type === 'facebook') {
-				_facebook(_shareData);
-			}
-
-			if (type === 'weibo') {
-				_weibo(_shareData);
-			}
-
-			if (type === 'twitter') {
-				_twitter(_shareData.text, _shareData.link);
-			}
-
-			if (type === 'gplus') {
-				_gplus(_shareData.link);
-			}
-
-			if (type === 'tumblr') {
-				_tumblr(_shareData.text, _shareData.link);
-			}
-
-			if (type === 'pinterest') {
-				_pinterest(_shareData);
-			}
-
-			if (type === 'linkedin') {
-				_linkedin(_shareData);
-			}
-
-			if (type === 'reddit') {
-				_reddit(_shareData.link);
-			}
+			_share($(this).data('type').toLowerCase());
 
 		});
+
+	}
+
+	function _share(type) {
+
+		if (type === 'link') {
+			_link(_shareData);
+		}
+
+		if (type === 'facebook') {
+			_facebook(_shareData);
+		}
+
+		if (type === 'weibo') {
+			_weibo(_shareData);
+		}
+
+		if (type === 'twitter') {
+			_twitter(_shareData.text, _shareData.link);
+		}
+
+		if (type === 'gplus') {
+			_gplus(_shareData.link);
+		}
+
+		if (type === 'tumblr') {
+			_tumblr(_shareData.text, _shareData.link);
+		}
+
+		if (type === 'pinterest') {
+			_pinterest(_shareData);
+		}
+
+		if (type === 'linkedin') {
+			_linkedin(_shareData);
+		}
+
+		if (type === 'reddit') {
+			_reddit(_shareData.link);
+		}
 
 	}
 
@@ -146,21 +149,21 @@ MOS.social = (function() {
 
 		_sendStat('Share', 'Copy link', link);
 
-		html = 	'<html>' + 
-				'<head>' + 
-				'	<title>' + _phrases.copy_link + '</title>' + 
-				'	<style>' + 
-				'		body {' + 
-				'			background-color: #777;' + 
-				'		}' + 
-				'		textarea {' + 
-				'			font-size: 15px; padding: 5px; width: 100%; height: 100%;' + 
-				'		}' + 
-				'	</style>' + 
-				'</head>' + 
-				'<body>' + 
-				'	<textarea id="ta" onfocus="var that = this; setTimeout(function () {that.select();}, 10)">' + link + '</textarea>' + 
-				'</body>' + 
+		html = 	'<html>' +
+				'<head>' +
+				'	<title>' + _phrases.copy_link + '</title>' +
+				'	<style>' +
+				'		body {' +
+				'			background-color: #777;' +
+				'		}' +
+				'		textarea {' +
+				'			font-size: 15px; padding: 5px; width: 100%; height: 100%;' +
+				'		}' +
+				'	</style>' +
+				'</head>' +
+				'<body>' +
+				'	<textarea id="ta" onfocus="var that = this; setTimeout(function () {that.select();}, 10)">' + link + '</textarea>' +
+				'</body>' +
 				'</html>';
 
 
@@ -208,7 +211,7 @@ MOS.social = (function() {
 
 		_sendStat('Share', 'Weibo', shareInfo.link);
 		_newWin(400, 350, url);
-		
+
 	}
 
 	function _twitter (text, link) {
@@ -232,7 +235,7 @@ MOS.social = (function() {
 		link = link || document.location.href;
 		_sendStat('Share', 'Tumblr', link);
 		_newWin(450, 500, 'http://www.tumblr.com/share?s=&v=3&t=' + encodeURIComponent(text) + '&u=' + encodeURIComponent(link));
-	
+
 	}
 
 	function _pinterest (data) {
@@ -265,7 +268,7 @@ MOS.social = (function() {
 		},
 		shareUrl = 'https://www.linkedin.com/shareArticle',
 		url = shareUrl + 	'?mini=true&url=' + encodeURIComponent(shareInfo.link) + '&title=' + encodeURIComponent(shareInfo.name) + '&summary=' + encodeURIComponent(shareInfo.description) + '&source='+ encodeURIComponent(shareInfo.link);
-		
+
 		_sendStat('Share', 'Linkedin', shareInfo.link);
 		_newWin(500, 400, url);
 
@@ -279,6 +282,7 @@ MOS.social = (function() {
 
 	}
 
+
 	return {
 		setup: _setup,
 		set: _set,
@@ -289,6 +293,7 @@ MOS.social = (function() {
 		tumblr: _tumblr,
 		pinterest: _pinterest,
 		linkedin: _linkedin,
-		phrases: _phrases
+		phrases: _phrases,
+		share: _share
 	};
 }());
