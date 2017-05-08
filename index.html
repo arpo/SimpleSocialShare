@@ -3,6 +3,13 @@
 
 <head>
 	<meta charset="utf-8">
+	<meta property="og:type"               content="website" />
+	<meta property="og:title"              content="futurism.com" />
+	<meta property="og:description"        content="The Top 19 Artificial Intelligence Movies - Futurism. These are our top favorite 19 artificial intelligence movies." />
+	<meta property="og:image"              content="https://i.ytimg.com/vi/C23Z3ANGk-U/hqdefault.jpg" />
+	<meta property="og:image:width"        content="1200" />
+	<meta property="og:image:height"       content="630 " />
+
 	<title>Simple Social Share</title>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<style type="text/css">
@@ -17,7 +24,6 @@
 
 	<!-- Insert links like this... -->
 	<!-- <a title="Copy link" class="MOS-shareBtn link" data-type="link" href="javascript:"><i class="fa fa-link"></i></a><a title="Facebook" class="MOS-shareBtn facebook" data-type="facebook" href="javascript:"><i class="fa fa-facebook"></i></a><a title="Twitter" class="MOS-shareBtn twitter" data-type="twitter" href="javascript:"><i class="fa fa-twitter"></i></a><a title="Google+" class="MOS-shareBtn gplus" data-type="gplus" href="javascript:"><i class="fa fa-google-plus"></i></a><a title="Tumblr" class="MOS-shareBtn tumblr" data-type="tumblr" href="javascript:"><i class="fa fa-tumblr"></i></a><a title="Pinterest" class="MOS-shareBtn pinterest" data-type="pinterest" href="javascript:"><i class="fa fa-pinterest"></i></a><a title="LinkedIn" class="MOS-shareBtn linkedin" data-type="linkedin" href="javascript:"><i class="fa fa-linkedin"></i></a><a title="Sina Weibo 新浪微博" class="MOS-shareBtn weibo" data-type="weibo" href="javascript:"><i class="fa fa-weibo"></i></a> -->
-
 
 	<!--
 		Optional classes
@@ -61,7 +67,7 @@
 	</style>
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-	<script type="text/javascript" src="MOS.share.js"></script>
+	<script type="text/javascript" src="MOS.social.js"></script>
 	<script type="text/javascript">
 
 	//Share from any link like this:
@@ -85,6 +91,18 @@
 				buttons: ['link', 'facebook', 'twitter', 'gplus', 'tumblr', 'pinterest', 'linkedin', 'reddit', 'weibo']
 			}
 		});
+
+
+		// Or read data to share from OG tags
+		// MOS.social.setup({
+		// 	fn: function (that, ev) { //This runs before the share functionality is executed
+		// 		MOS.social.set(); //If data to share is omitted data is read from OG tags
+		// 	},
+		// 	insert: { //...or insert/inject links like this, can be omited
+		// 		target: '.socialButtons',
+		// 		buttons: ['link', 'facebook', 'twitter', 'gplus', 'tumblr', 'pinterest', 'linkedin', 'reddit', 'weibo']
+		// 	}
+		// });
 
 	});
 

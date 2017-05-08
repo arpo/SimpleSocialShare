@@ -3,6 +3,7 @@ MOS.social = (function() {
 
 	var _shareData = {},
 		_isMobile = false,
+		_runBeforFn,
 		_phrases = {};
 
 	//Phrases used can be translated by overrunning this like this:
@@ -21,7 +22,39 @@ MOS.social = (function() {
 		}
 	}
 
-	function _runBeforFn() {}
+	function _getShareDataFromMetaTags() {
+		
+		var getOG = function (prop) {
+
+			var tag = document.head.querySelector('[property="og:' + prop + '"]'),
+				val = '';
+			if (tag) {
+				val = tag.content;
+			}
+
+			return val;
+
+		};
+
+		var picture = getOG('image');
+		
+		if (picture.substr(0, 4) !== 'http') {
+			picture = location.origin + picture ;
+			picture.split('//').join('/');
+		}
+
+		var data = {
+			name: getOG('title'),
+			link: location.href,
+			picture: picture,
+			text: getOG('description')
+		};
+
+		return data;
+		
+	}
+
+	_runBeforFn = function () {};
 
 	function _setup(obj) {
 
@@ -30,6 +63,8 @@ MOS.social = (function() {
 		if (obj.fn) {
 			_runBeforFn = obj.fn;
 		}
+
+		_getShareDataFromMetaTags();
 
 		if (obj.insert && obj.insert.target && obj.insert.buttons) {
 
@@ -71,8 +106,6 @@ MOS.social = (function() {
 
 		$(document.body).on('click', '.MOS-shareBtn', function (e) {
 			e.preventDefault();
-
-			_runBeforFn(this, e);
 			_share($(this).data('type').toLowerCase());
 
 		});
@@ -80,6 +113,8 @@ MOS.social = (function() {
 	}
 
 	function _share(type) {
+
+		_runBeforFn();
 
 		if (type === 'link') {
 			_link(_shareData);
@@ -120,7 +155,15 @@ MOS.social = (function() {
 	}
 
 	function _set(data) {
-		_shareData = data;
+
+		if (data) {
+			_shareData = data;
+		} else {
+			_shareData = _getShareDataFromMetaTags();
+		}
+
+		console.log(_shareData);
+		
 	}
 
 	function _newWin(w, h, input) {
