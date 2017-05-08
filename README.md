@@ -36,7 +36,7 @@ See index.html for more info
 	</style>
 
 	<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
-	<script type="text/javascript" src="MOS.share.js"></script>
+	<script type="text/javascript" src="MOS.social.js"></script>
 	<script type="text/javascript">
 
 	$(document).on('ready', function() {
@@ -59,3 +59,21 @@ See index.html for more info
 
 	</script>
 
+
+
+Or read data to share from OG tags
+
+	MOS.social.setup({
+		fn: function (that, ev) { //This runs before the share functionality is executed
+			MOS.social.set(); //If data to share is omitted data is read from OG tags
+		},
+		insert: { //...or insert/inject links like this, can be omited
+			target: '.socialButtons',
+			buttons: ['link', 'facebook', 'twitter', 'gplus', 'tumblr', 'pinterest', 'linkedin', 'reddit', 'weibo']
+		}
+	});
+
+
+To share using javascript:
+
+	MOS.social.share('facebook');
