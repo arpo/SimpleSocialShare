@@ -78,13 +78,20 @@
 	$(document).on('ready', function() {
 
 		MOS.social.setup({
-			fn: function (that, ev) { //This runs before the share functionality is executed
-				MOS.social.set({ //This data is used by all share buttons
+			fn: function (type) { //This runs before the share functionality is executed
+
+				var msgData = { //This data is used by all share buttons
 					name: 'futurism.com',
 					link: 'http://futurism.com/videos/the-top-19-artificial-intelligence-movies/',
 					picture: 'https://i.ytimg.com/vi/C23Z3ANGk-U/hqdefault.jpg',
 					text: 'The Top 19 Artificial Intelligence Movies - Futurism. These are our top favorite 19 artificial intelligence movies.'
-				});
+				};
+
+				if (type === 'twitter') { //Set specific msg for different channels
+					msgData.text = 'The Top 19 Artificial Intelligence Movies';
+				}
+
+				MOS.social.set(msgData);
 			},
 			insert: { //...or insert/inject links like this, can be omited
 				target: '.socialButtons',

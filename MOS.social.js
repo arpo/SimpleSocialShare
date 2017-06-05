@@ -114,7 +114,7 @@ MOS.social = (function() {
 
 	function _share(type) {
 
-		_runBeforFn();
+		_runBeforFn(type);
 
 		if (type === 'link') {
 			_link(_shareData);
@@ -161,8 +161,6 @@ MOS.social = (function() {
 		} else {
 			_shareData = _getShareDataFromMetaTags();
 		}
-
-		console.log(_shareData);
 		
 	}
 
